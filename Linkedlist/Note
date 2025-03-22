@@ -1,0 +1,29 @@
+public boolean palin(Node head){
+        Node slow = head;
+        Node fast = head;
+        while(fast != null && fast.next != null){
+            slow = slow.next;
+            fast = fast.next.next;
+        }
+        Node mid = slow;
+        Node prev = null;
+        Node curr = mid;
+        Node next;
+        while(curr != null){
+            next = curr.next;
+            curr.next = prev;
+            prev = curr;
+            curr = next;
+        }
+        
+        Node right = prev;
+        Node left = head;
+        while(right != null ){
+            if(left.val != right.val){
+                return false;
+            }
+            left = left.next;
+            right = right.next;
+        }
+        return true;
+    }
