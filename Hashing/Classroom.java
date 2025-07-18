@@ -1,6 +1,6 @@
 import java.util.*;
 
-public class classroom {
+public class Classroom {
     public static void main(String[] args) {
       HashMap<String, Integer> hm = new HashMap<>();
         hm.put("A", 1);
